@@ -19,39 +19,30 @@
     width: 100%;
 }
 .view_book .main_row{
-    display: flex;
-    float: left;
     width: 100%;
-    margin: 10px;
-    padding: 10px;
+    margin:10px;
     border: 1px solid lightgray;
     border-radius: 10px;
 }
-.book_image{
-    width: 20%;
-    height: 150px;
-    background-color: aqua;
-}
-.book_details{
-    width: 80%;
-    height: 100px;
-    padding: 10px;
-}
-.book_details h5{
+.main_row h5{
     width: 100%;
+    background-color: lightgray;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
-.book_details .book_name{
+.book_name{
     width: 80%;
 }
-.book_details .buttons{
+.buttons{
     float: right;
     text-align: end;
     width: 20%;
 }
-.book_details .buttons i{
-    margin-left: 20px;
+.buttons i{
+    margin-left: 30px;
 }
-.book_details .sub_row{
-    height: 100%;
+.sub_row{
+    padding: 10px;
 }
 
