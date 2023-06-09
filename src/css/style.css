@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+}
+.home{
+    padding-top: 60px;
+    display: flex;
+}
+.add_book{
+    position: fixed;
+    width: 25%;
+}
+.view_book{
+    margin-left: 32%;
+    width: 100%;
+}
+.view_book .main_row{
+    display: flex;
+    float: left;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+.book_image{
+    width: 20%;
+    height: 150px;
+    background-color: aqua;
+}
+.book_details{
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+}
+.book_details h5{
+    width: 100%;
+}
+.book_details .book_name{
+    width: 80%;
+}
+.book_details .buttons{
+    float: right;
+    text-align: end;
+    width: 20%;
+}
+.book_details .buttons i{
+    margin-left: 20px;
+}
+.book_details .sub_row{
+    height: 100%;
+}
+
