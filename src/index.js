@@ -6,6 +6,7 @@ import '../src/css/style.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import App from './App'
+import Default from './components/Default';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
     <Header />
       <Routes>
         <Route path='/' element={<App />}></Route>
+        <Route path='*' element={<Default />}></Route>
       </Routes>
   </BrowserRouter>
 );

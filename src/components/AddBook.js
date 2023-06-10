@@ -9,7 +9,7 @@ export default function AddBook(props) {
                 <form onSubmit={props.onSubmit} action=''>
                     <div className="mb-3">
                         <label className="form-label">Book Title</label>
-                        <input type="text" className="form-control" value={props.book_name} onChange={(e) => props.setBook_name(e.target.value)} />
+                        <input type="text" className="form-control" value={props.book_name} onChange={(e) => props.setBook_name(e.target.value)} required />
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Author Name</label>
@@ -26,6 +26,10 @@ export default function AddBook(props) {
                     <div className="mb-3">
                         <label className="form-label">Ratings</label>
                         <input type="number" className="form-control" value={props.ratings} onChange={(e) => props.setRatings(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Web Link</label>
+                        <input type="link" className="form-control" value={props.web_link} onChange={(e) => props.setWeb_link(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <input type="submit" className="btn btn-success" value="Add Book" id='add' />

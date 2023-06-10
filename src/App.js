@@ -11,6 +11,7 @@ export default function Home() {
     const [book_type, setBook_type] = useState('');
     const [no_of_pages, setNo_of_pages] = useState('');
     const [ratings, setRatings] = useState('');
+    const [web_link, setWeb_link] = useState('');
     const [API_data, setAPI_data] = useState([]);
     const [load, re_load] = useState(true);
 
@@ -26,12 +27,13 @@ export default function Home() {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/add_book', { book_name, author_name,book_type,no_of_pages,ratings });
+        await axios.post('http://localhost:5000/add_book', { book_name, author_name,book_type,no_of_pages,ratings,web_link });
         setBook_name('');
         setAuthor_name('');
         setBook_type('');
         setNo_of_pages('');
         setRatings('');
+        setWeb_link('');
         re_load(true);
     }
 
@@ -41,6 +43,7 @@ export default function Home() {
         setBook_type(data.book_type);
         setNo_of_pages(data.no_of_pages);
         setRatings(data.ratings);
+        setWeb_link(data.web_link);
         setBook_id(data._id);
         document.getElementById('update').style.display = 'block';
         document.getElementById('add').style.display = 'none';
@@ -49,13 +52,14 @@ export default function Home() {
 
     const updateData = async () => {
         await axios.put(`http://localhost:5000/update_book/${id}`,{
-            book_name, author_name,book_type,no_of_pages,ratings
+            book_name, author_name,book_type,no_of_pages,ratings,web_link
         });
         setBook_name('');
         setAuthor_name('');
         setBook_type('');
         setNo_of_pages('');
         setRatings('');
+        setWeb_link('');
         document.getElementById('update').style.display = 'none';
         document.getElementById('add').style.display = 'block';
         re_load(true);
@@ -67,7 +71,7 @@ export default function Home() {
     }
     return (
         <div className="container home">
-            <AddBook updateData={updateData} onSubmit={onSubmit} book_name={book_name} author_name={author_name} book_type={book_type} no_of_pages={no_of_pages} ratings={ratings} setBook_type={setBook_type} setNo_of_pages={setNo_of_pages} setRatings={setRatings} setBook_name={setBook_name} setAuthor_name={setAuthor_name} />
+            <AddBook updateData={updateData} onSubmit={onSubmit} book_name={book_name} author_name={author_name} book_type={book_type} no_of_pages={no_of_pages} ratings={ratings} setBook_type={setBook_type} setNo_of_pages={setNo_of_pages} setRatings={setRatings} setBook_name={setBook_name} setAuthor_name={setAuthor_name} web_link={web_link} setWeb_link={setWeb_link}  />
             <ViewBook API_data={API_data} setData={setData} deleteData={deleteData} />
         </div>
     )

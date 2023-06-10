@@ -22,6 +22,9 @@ const UserSchema = new mongoose.Schema({
     },
     ratings:{
         type: Number
+    },
+    web_link:{
+        type: String
     }
 });
 const User = mongoose.model('users', UserSchema);
@@ -53,7 +56,6 @@ app.put("/update_book/:id", async (req, res) => {
     const id = req.params.id;
     await User.findByIdAndUpdate(id, req.body, { useFindAndModify: false });
     res.send(req.body);
-
 });
 
 //delete data
